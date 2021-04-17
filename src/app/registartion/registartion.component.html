@@ -1,0 +1,249 @@
+<!-- Start Breadcrumb -->
+<div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title"><span>User Information</span></h1>
+          <div class="breadcrumb">
+            <a href="index-2.html">Home</a>
+            <span class="delimeter">/</span>
+            <span class="current">User Information</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Breadcrumb -->
+  
+  
+  <div class="main-contain" style="margin-left: 35%;margin-right: 35%;">
+    <div class="container">
+      <div class="row">
+  
+        <div class="home-main col-md-9 col-sm-12 clo-xs-12 main-contant-right">
+          <div class="widget">
+            <h6 class="text-uppercase bottom-line" style="margin-right: 52%;"><strong>My personal information</strong>
+            </h6>
+          </div>
+          <form [formGroup]="SignupForm" (ngSubmit)="onSignup()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label> Name <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_name" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  <mat-error *ngIf="SignupForm.get('user_name').hasError('required') && !SignupForm.get('user_name').pristine">
+                    Name is required</mat-error>
+                  <mat-error *ngIf="SignupForm.get('user_name').hasError('minlength')">Name must be greater than 5 characters
+                  </mat-error>
+                  <mat-error *ngIf="SignupForm.get('user_name').hasError('pattern')">Only characters are allowed</mat-error>
+                </div>
+                <div class="form-group">
+                  <label>password <span class="text-danger">*</span></label>
+                  <input type="email" formControlName="user_password" required placeholder="password" name="u_EmailId"
+                    class="form-control input-sm required email"><br>
+                  <mat-error
+                    *ngIf="SignupForm.get('user_password').hasError('required') && !SignupForm.get('user_password').pristine">
+                    Email is required</mat-error>
+  
+            
+                </div>
+
+                <!--<div class="example-container" formGroupName="password_group">
+                  <div class="form-group">
+                    <label>Password <span class="text-danger">*</span></label>
+                    <br />
+                    <input formControlName="u_password" matInput placeholder="Enter your password"
+                      [type]="hide ? 'password' : 'text'" class="form-control input-sm required">
+                    <mat-icon style="margin-left: 95%;" matSuffix (click)="hide = !hide">
+                      {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <br />
+                    <label>Confirm Password <span class="text-danger">*</span></label><br />
+                    <input matInput formControlName="u_confirm_password" placeholder="Enter confirm password"
+                      [type]="hide1 ? 'password' : 'text'" class="form-control input-sm required">
+                    <mat-icon style="margin-left: 95%;" matSuffix (click)="hide1 = !hide1">
+                      {{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </div>
+                  <mat-error *ngIf="SignupForm.get('password_group').hasError('notSame')">Both password and confirm
+                    password should
+                    be same.</mat-error>
+                </div>-->
+  
+                <div class="form-group">
+                  <label>Email Id <span class="text-danger">*</span></label>
+                  <input type="email" formControlName="user_email" required placeholder="Email Address" name="u_EmailId"
+                    class="form-control input-sm required email"><br>
+                  <mat-error
+                    *ngIf="SignupForm.get('user_email').hasError('required') && !SignupForm.get('user_email').pristine">
+                    Email is required</mat-error>
+  
+                  <mat-error *ngIf="SignupForm.get('user_email').hasError('email')">Email is invalid</mat-error>
+                </div>
+  
+                <div class="form-group">
+                  <label> Age <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_age" required placeholder="Age" name="u_Address"
+                    class="form-control input-sm required"><br>
+                  <mat-error
+                    *ngIf="SignupForm.get('user_age').hasError('required') && !SignupForm.get('user_age').pristine">
+                    Age is required</mat-error>
+                </div>
+                <div class="form-group">
+                  <label>Gender</label><br>
+                  <mat-radio-group aria-label="Select an option" formControlName="user_gender"
+                    class="form-control input-sm required">
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+  
+                <div class="form-group">
+                  <label> Mobile No <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_mob" required placeholder="Enter Mobile No" name="u_mobileno"
+                    class="form-control input-sm required">
+                  <mat-error
+                    *ngIf="SignupForm.get('user_mob').hasError('required') && !SignupForm.get('user_mob').pristine">
+                    mobile number is required
+                  </mat-error>
+                  <mat-error *ngIf="SignupForm.get('user_mob').hasError('maxlength')">mobile number should be 10
+                    numbers
+                  </mat-error>
+                  <mat-error *ngIf="SignupForm.get('user_mob').hasError('minlength')">mobile number should not be < 10
+                      numbers </mat-error>
+                      <mat-error *ngIf="SignupForm.get('user_mob').hasError('pattern')">Only numbers are allowed
+                      </mat-error>
+                </div>
+                <label>address</label>
+                <div class="form-group">
+  
+                  <input formControlName="user_address" required  name="u_dob" class="form-control input-sm required">
+                
+                  <mat-error *ngIf="SignupForm.get('user_address').hasError('required') && !SignupForm.get('user_address').pristine">
+                    user address is required
+                  </mat-error>
+                </div>
+                <label>type</label>
+                <div class="form-group">
+  
+                  <input formControlName="user_type" required name="u_dob" class="form-control input-sm required">
+                
+                 
+                </div>
+                
+                <div class="form-group">
+                  <input type="file" (change)="onFileAdd($event)">
+                </div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit"  value="submit" class="btn cd-btn"><i
+                  class="fa fa-save mr5"></i>
+                Save</button>
+              <button style="margin-left: 25%;" type="button" (click)="onSignupCancel()" class="btn cd-btn"><i
+                  class="fa fa-save mr5"></i>
+                Cancel</button>
+              </div>
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button style="margin-left: 43%;" type="button" routerLink="/login" class="btn btn-success">Already Have An
+    Account..</button>
+    <!--<mat-card class="c">
+      <h2 class="h">USER REGISTRAION</h2>
+    <div class="container">
+        <form [formGroup]="userform" (ngSubmit)="onSaveClick()">
+           <mat-form-field  appearance="fill">
+              <mat-label>USER NAME</mat-label>
+              <mat-icon matPrefix>account_circle&nbsp;</mat-icon>
+            <input matInput  formControlName="user_name"  placeholder="Enter user_name"[(ngModel)]="value">
+            <mat-error *ngIf="userform.get('user_name').hasError('required')&&!userform.get('user_name').pristine">user name is require</mat-error>
+            <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+           <mat-form-field  appearance="fill">
+            <mat-label>USER PASSWORD</mat-label>
+           <input matInput  formControlName="user_password" type="password" placeholder="Enter user_password">
+           <mat-error *ngIf="userform.get('user_password').hasError('required')&&!userform.get('user_password').pristine">user password is require</mat-error>
+          </mat-form-field>-->
+          <!--<div formGroupName="password_group">
+          <mat-form-field appearance="fill">
+            <mat-label>ENTER USER PASSWORD</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"  formControlName="user_password"placeholder="ENTER PASSWORD" >
+            <mat-error *ngIf="userform.get('password_group').get('user_password').hasError('required') && !userform.get('password_group').get('user_password').pristine ">password is required</mat-error>
+            <mat-icon matPrefix>lock_outline&nbsp;</mat-icon>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>-->
+         <!-- <mat-form-field  appearance="fill">
+            <mat-label>CONFIRM USER PASSWORD</mat-label>
+           <input matInput  type="password" placeholder="Enter user_password">
+           <mat-error *ngIf="userform.get('user_password').hasError('required')&&!userform.get('user_password').pristine">user password is require</mat-error>
+          </mat-form-field>-->
+          <!--<mat-form-field appearance="fill">
+            <mat-label>ENTER USER CONFIRM PASSWORD</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER USER CONFIRM PASSWORD" formControlName="user_cpassword">
+            <mat-hint *ngIf="userform.get('password_group').hasError('passwordMatchError') && !userform.get('password_group').pristine ">Both password are not same</mat-hint>
+            <mat-icon matPrefix>lock_outline&nbsp;</mat-icon>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          </div>-->
+           <!--<mat-form-field  appearance="fill">
+              <mat-label>USER EMAIL</mat-label>
+              <mat-icon matPrefix>email&nbsp;</mat-icon>
+            <input matInput  formControlName="user_email"  placeholder="xyz60@.com">
+            <mat-error *ngIf="userform.get('user_email').hasError('required')&&!userform.get('user_email').pristine">user email is require</mat-error>
+            <mat-error *ngIf="userform.get('user_email').hasError('email')&&!userform.get('user_email').pristine">user email is not valid formate</mat-error>
+           </mat-form-field>
+           <mat-form-field  appearance="fill">
+             <mat-label>USER AGE</mat-label>
+            <input matInput  formControlName="user_age"  placeholder="Enter user_age">
+            <mat-error *ngIf="userform.get('user_age').hasError('required')&&!userform.get('user_age').pristine">user age is require</mat-error>
+           </mat-form-field><br>
+          
+          <mat-radio-group aria-label="Select an option" formControlName="user_gender">
+             <label>select gender: </label><br>
+             <mat-radio-button  value="MALE">MALE</mat-radio-button><br>
+             <mat-radio-button  value="FEMALE">FEMALE</mat-radio-button>
+           </mat-radio-group><br>
+           <mat-form-field class="example-full-width"  appearance="fill">
+             <mat-label>Telephone</mat-label>
+             <span matPrefix>+91 &nbsp;</span>
+            <input matInput  formControlName="user_mob"  placeholder="95555-89798">
+            <mat-error *ngIf="userform.get('user_mob').hasError('required')&&!userform.get('user_mob').pristine">user mobail is require</mat-error>
+            <mat-icon matSuffix>mode_edit</mat-icon>
+           </mat-form-field>
+           <mat-form-field  appearance="fill">
+             <mat-label>USER ADDRESS</mat-label>
+            <input matInput  formControlName="user_address"  placeholder="Enter user_address">
+            <mat-error *ngIf="userform.get('user_address').hasError('required')&&!userform.get('user_address').pristine">user address is require</mat-error>
+           </mat-form-field><br>
+           <mat-form-field  appearance="fill" class="a">
+            <mat-label>USER type</mat-label>
+           <input matInput  formControlName="user_type"  placeholder="Enter user_address" value="1">
+          </mat-form-field><br>-->
+           <!--<button type="submit" class="btn btn-primary" >REGISTRAION</button>-->
+           <!--<button   mat-raised-button color="primary" type="submit" [disabled]="userform.invalid">SUBMIT</button>
+             <button class="b" mat-raised-button color="warn" type="button" (click)="reset()" >RESET</button>
+             <p class="t">alredy have account?<a routerLink="/login">sign in</a></p>
+        </form>
+      </div>
+    </mat-card>-->
+  
+    <!--<p-dialog [(visible)]="dis">
+    <p-header>
+      WELCOME TO GIFTVILLA
+    </p-header>
+    Your details are succesfully saved...!
+    <p-footer>
+      <button routerLink="/">OK</button>
+  
+    </p-footer>
+  </p-dialog>-->

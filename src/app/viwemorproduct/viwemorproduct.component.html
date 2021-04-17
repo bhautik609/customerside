@@ -1,0 +1,126 @@
+
+<div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title"><span>Shop Detail</span></h1>
+          <div class="breadcrumb">
+            <a routerLink="/">Home</a>
+            <span class="delimeter">/</span>
+            <span class="current">Shop Detail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <section class="main-contain shop-product bg-white">
+    <div class="container">
+      <div *ngFor="let item of obj" style="float: left;margin-left: 1%;">
+        <img mat-card-image style="height: 300px;width: 225px;border: 1px solid black;"
+          src="http://localhost:3000/images/product/{{item.product_img1}}">
+      </div>
+      <div class="row" *ngFor="let item of obj" style="float: left;margin-top: 7%;width: 100%;">
+  
+  
+        <div class="col-md-6 col-sm-6 col-sm-12">
+          <div class="shop-product-heading">
+            <h2>{{item.product_name }}</h2>
+          </div>
+          
+  
+  
+          <p class="mb15"> <label style="font-style: bold;font-size: medium;">Description:</label> <br>{{item.product_desc}}
+          </p>
+  
+          <ul class="list-inline shop-product-prices mb30">
+            <li class="shop-red">
+              <label style="font-style: bold;font-size: medium;">Price:</label> <br><br>
+              {{item.product_price|  currency:'INR' }}</li>
+  
+          </ul>
+          <ul>
+            <label style="font-style: bold;font-size: medium;">Manufacturer:</label> <br>
+            <h2>{{item.product_mfd}}</h2>
+          </ul>
+  
+          <br>
+          
+  
+          <br>
+          <br>
+          <!-- <h3 class="shop-product-title">Quantity</h3>
+          <div class="mb30">
+            <form name="f1" class="product-quantity">
+              <button type='button' class="quantity-button" name='subtract'
+                onclick='javascript: document.getElementById("qty").value--;' value='-'>-</button>
+              <input type='text' class="quantity-field" name='qty' value="1" id='qty' />
+              <button type='button' class="quantity-button" name='add'
+                onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
+            </form>
+            <button type="button" class="btn btn-product">Add to Cart</button>
+          </div> -->
+  
+          <ul class="list-inline add-to-wishlist add-to-wishlist-brd">
+            <li class="wishlist-in">
+              <i class="fa fa-heart"></i>
+  
+              <button style="border: none;background-color: white;color:yellowgreen" (click)="AddTowishlist()">Add to
+                Wishlist</button>
+            </li>
+  
+          </ul>
+          <ul>
+            <button (click)="onAddToCart(item)" class=" btn cd-btn pull-left"
+              style="width: 325px;font-size: medium;margin-top: 3%;">Add To
+              Cart</button>
+          </ul>
+        </div>
+      </div>
+      <!--<p-dialog [(visible)]="wishlistFlag">
+        <p-header>
+          Please Do Login!!!
+        </p-header>
+        Sorry we can't store your wishlist please login for that.....
+        <p-footer>
+          <button type="button" pButton icon="pi pi-check" label="Yes" routerLink="/loginpage">Go To Login</button>
+        </p-footer>
+      </p-dialog>-->
+      <!-- </section> -->
+  
+    </div>
+  </section>
+  
+  <!--<p-dialog [(visible)]=" wishlistFlag">
+    <p-header>
+      Login Fisrt!
+    </p-header>
+    Please!
+    <br> Do login first to store product in your wishlist
+  </p-dialog>-->
+  
+ <!-- <p-carousel [value]="relatedProduct" [numVisible]="4" [numScroll]="1" circular="true" [autoplayInterval]="6000"
+    [responsiveOptions]="responsiveOptions">
+    <p-header>
+      <h3 class="h3 text-center">Similar Products</h3>
+      <br>
+    </p-header>
+    <ng-template let-pro pTemplate="item">
+      <div style="margin-left: 2%;">
+        <a>
+          <img src="http://localhost:3000/images/product_images/{{pro.pro_img}}" alt="Product"
+            style="height: 250px;width: 175px;" (click)="onViewMore(pro.pro_id)">
+        </a>
+        <div>
+          <h3>
+            <a>{{pro.pro_name | titlecase}}</a>
+          </h3>
+          <div>
+            <div class="shop-red">
+              <span>{{pro.pro_price | currency : 'INR'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>-->
+  

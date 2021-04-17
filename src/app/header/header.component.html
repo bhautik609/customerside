@@ -1,0 +1,104 @@
+<div style="margin-bottom: 50px;">
+    <header>
+      <div class="topbar">
+        <div class="container">
+          <ul class="list-inline pull-left hidden-sm hidden-xs">
+            <li><span class="text-primary color">Have a question?</span> Call 910 4610 020</li>
+          </ul>
+          <ul class="topbarnav pull-right">
+            <li class="linkdown">
+              <a href="#">
+                <img src="assets/img/flags/us.png" class="mr5" alt="">
+                <span class="hidden-xs"> English
+                </span>
+              </a>
+            </li>
+            <li class="linkdown">
+              <a routerLink="/">
+                <i class="fa fa-user mr5"></i>
+                <span class="hidden-xs">
+                  Home
+                  <i class="fa fa-angle-down ml5"></i>
+                </span>
+              </a>
+              <ul class="cd-link">
+                <li><a routerLink="/wishlist">Wishlist</a></li>
+                <li><a routerLink="/cart">My Cart</a></li>
+                <!-- <li><a routerLink="/checkout">Checkout</a></li> -->
+                <li><a *ngIf="flage" routerLink="/login">Login</a></li>
+                <li><a *ngIf="flage" routerLink="/regi">Register</a></li>
+                <li><a routerLink="/myaccount">My Account</a></li>
+                <li><a routerLink="/myorder">My Order</a></li>
+                <li><a *ngIf="flage1" (click)="onLogout()">LOGOUT</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="middlebar">
+        <div class="container">
+          <div class="row">
+            <div class="display-table">
+              <div class="col-sm-3 vertical-align text-left hidden-xs">
+                <a routerLink="/">
+                  <img width="150px" height="" src="../../assets/img/logo1.jpg" alt="" />
+                </a>
+              </div>
+              <div class="col-sm-7 vertical-align text-center">
+                <div class="col-sm-6">
+                  <!--<input type="text" name="keyword" class="form-control input-lg" placeholder="Search" #txtSearch
+                    (keyup)="SearchTextBox(txtSearch.value)">-->
+                    <input type="text" name="keyword" class="form-control input-lg" placeholder="Search" #txtSearch>
+                </div>
+                <div class=" col-sm-3">
+                  <!--<select class="form-control input-lg" name="fk_cat_id" #fk_cat_id
+                    (change)="onWatchClick(fk_cat_id.value)" placeholder="select" class="form-control input-lg">
+                    <option selected>Select Category</option>
+                    <option *ngFor="let item of category" [value]="item.cat_id">{{item.cat_name}}</option>
+                  </select>-->
+                  <select class="form-control input-lg" 
+                     placeholder="select" class="form-control input-lg">
+                    <option selected>Select Category</option>
+                    <option>item.cat_name</option>
+                  </select>
+                </div>
+                <div class="col-sm-3">
+                  <!--<input type="submit" class="btn cd-btn top-cat-search btn-block" value="Search"
+                    (click)="SearchTextBox1(txtSearch.value)">-->
+                    <input type="submit" class="btn cd-btn top-cat-search btn-block" value="Search">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" navbar cd-navbar navbar-default">
+        <div class="container">
+  
+          <br>
+          <br>
+          <div id="navbar-collapse-3" class="navbar-collapse collapse">
+            <ul>
+              <li class="li-header"><a routerLink="/">Home</a></li>
+              <li class="li-header"><a routerLink="/cart">Cart</a></li>
+              <li class="li-header"><a routerLink="/myaccount">My Account</a></li>
+              <li class="li-header"><a routerLink="help">Help</a></li>
+              <li class="li-header"><a routerLink="/myorder">Order</a></li>
+              <li class="li-header"><a routerLink="/con">ContactUs</a></li>
+              <!--<li class="li-header"><a (click)="Checmember()" style="color: red;">Buy Membership</a></li>-->
+              <li class="li-header" style="margin-left: 25%;color: red;"><a routerLink="/Wishes">Send Wishes</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+  <!--<p-dialog [(visible)]="dispalymember">
+    <p-header>
+      Opps!!!
+    </p-header>
+    Your Are already A Giftvilaa member
+    <p-footer>-->
+      <!--<button (click)="dispalymember=false">OK</button>-->
+    <!--</p-footer>
+  </p-dialog>-->

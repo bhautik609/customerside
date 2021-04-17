@@ -1,0 +1,175 @@
+<div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title"><span>User Information</span></h1>
+          <div class="breadcrumb">
+            <a href="index-2.html">Home</a>
+            <span class="delimeter">/</span>
+            <span class="current">User Information</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Breadcrumb -->
+  
+  <!--<div *ngFor="let item of WalletDetails"
+    style="float:left;font-size: large;margin-top: 5%;font-weight: bold;width: 250px;margin-left: 3%;">
+    <mat-card>
+      Wallet Details
+      <br>
+      <br>
+      <hr style="border: 1px solid gainsboro;">
+      <h4>Your Wallet Details Are :</h4>-->
+      <!-- <label>Wallet Id :</label><br>
+      {{item.wallet_id}}<br> -->
+  
+      <!--<label>Wallet Amount :</label>
+      <br>
+      {{item.wallet_amount}}
+    </mat-card>
+  </div>
+  <div *ngFor="let item of OfferDetails"
+    style="float:right;font-size: large;margin-top: 5%;font-weight: bold;width: 250px;margin-right: 3%;">
+    <mat-card>
+      Current Offer Details
+      <br>
+      <br>
+      <hr style="border: 1px solid gainsboro;">
+      <div style="font-size: medium;">
+        <h4>Your Offer Details :</h4>-->
+        <!-- <label>Offer ID :</label><br>
+      {{item.member_id}}<br> -->
+        <!--<label>End Date :</label><br>{{item.End_date}}<br>
+        <label>Pucashed Date :</label><br>{{item.Start_date}}<br>
+        <label>Offer Price :</label><br>{{item.offer_Price}}<br>
+  
+        <br>
+      </div>
+    </mat-card>
+  </div>-->
+  
+  <div class="main-contain">
+    <div class="container">
+      <div class="row">
+  
+        <div class="home-main col-md-9 col-sm-12 clo-xs-12 main-contant-right" style="margin-left: 30%;width: 800px;">
+          <div class="widget">
+            <h6 class="text-uppercase bottom-line" style="margin-right: 52%;"><strong>My personal information</strong>
+            </h6>
+  
+          </div>
+          <form [formGroup]="user_update" (ngSubmit)="onUserUpdate()">
+  
+            <div class="row">
+              <div class="col-md-6">
+                      
+                <div class="form-group">
+                  <!-- <div *ngFor="let item of list"> -->
+                  <img mat-card-image style="height: 200px;width: 200px;border-radius: 100px;" src="{{photourl}}">
+                <p>change profile photo</p>  <input type="file" (change)="onFileAdd($event)">
+                  <!-- </div> -->
+                </div>
+                <div class="form-group">
+                  <!-- <div *ngFor="let item of list"> -->
+                  <!--<img mat-card-image style="height: 200px;width: 200px;border-radius: 100px;" src="{{userurl}}">
+                  <button mat-button class="btn btn-primary" (click)="editImageuser(u_EmailId)">Change Image </button>-->
+                  <!-- </div> -->
+                </div>
+  
+                <div class="form-group">
+                  <label>Email Address <span class="text-danger">*</span></label>
+                  <input type="email" disabled="true" formControlName="user_email" required placeholder="Email Address"
+                    name="u_EmailId" class="form-control input-sm required email"><br>
+                  
+                </div>
+  
+                <div class="form-group">
+                  <label> Name <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_name" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                 
+                </div>
+
+                <div class="form-group">
+                  <label> Password <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_password" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label> Age <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_age" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+                <div class="form-group">
+                  <label> gender <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_gender" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label> Mobail No <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_mob" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label> Address <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_address" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+
+                <div class="form-group">
+                  <label> type <span class="text-danger">*</span></label>
+                  <input type="text" formControlName="user_type" required placeholder="Enter Name" name="u_Name"
+                    class="form-control input-sm required"><br>
+                  
+                </div>
+  
+  
+               
+  
+                
+                
+  
+                
+  
+  
+              </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+              <button type="submit" class="btn cd-btn" (click)="onUserUpdate()">UPDATE</button>
+              <!--<button style="margin-left: 30%;" class="btn cd-btn" (click)="onUserCancel()">Cancel</button>-->
+            </div>
+          </form>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <!--<button (click)="changepassword(u_EmailId)" style="margin-left: -5%;" class="btn cd-btn"><i
+                  class="fa fa-lock mr5"></i>Change
+                password</button>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--<p-dialog [(visible)]="Display">
+    <p-header>
+      Alert!!!
+    </p-header>
+    Please do login First for changing password...!!
+    <p-footer>
+      <button type="button" pButton icon="pi pi-check" label="goto login" (click)="onYesClick()">Goto Login</button>
+      <button type="button" pButton icon="pi pi-times" (click)="Display=false"  label="Cancel"
+        class="ui-button-secondary">Cancel</button>
+    </p-footer>
+  </p-dialog>-->
+  

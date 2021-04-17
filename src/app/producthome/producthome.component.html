@@ -1,0 +1,87 @@
+<app-slider>
+</app-slider>
+<!-- <div style="margin-top: 20px;">
+
+</div>
+
+<div class="header-cat-block" style="align-items: center;margin-left: 300px;">
+  <div class="col-sm-6">
+    <input type="text" style="width: 140%;border-radius: 20px;" name="keyword" class="form-control input-lg"
+      placeholder="Search" #txtSearch (keyup)="SearchTextBox(txtSearch.value)">
+  </div>
+</div> -->
+<!-- <app-leftcategory></app-leftcategory> -->
+
+<div class="main-contain col-grid-style">
+  <div class="container">
+    <div class="row clearfix" >
+
+      <div *ngFor="let item of obj" class="col-md-3 col-sm-6 col-xs-12">
+        <div class="item-box item mb30">
+          <div class="shop-item">
+            <ul class="product-labels">
+              <!-- <li>New</li> -->
+            </ul>
+            <div class="item-img">
+              <img src="http://localhost:3000/images/product/{{item.product_img1}}" alt="" class="img-responsive"
+                id="img200">
+            </div>
+
+            <div class="item-inner">
+              <div class="item-inner-detail">
+                <div class="item-inner-detail-cart">
+                  <a class="btn btn-line-xs btn-white-line" (click)="onAddToCart(item)">
+                    <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                  <br><br>
+                  <a class="btn btn-line-xs btn-white-line" (click)="ImageViewMore(item)">
+                    <i class="fa fa-info-circle"></i> More...</a>
+                </div>
+              </div>
+            </div>
+            <div class="shop-item-info small-thumb-proudct">
+              <a routerLink="shop-detail.html">
+                <h6 class="shop-item-name">{{item.product_name.toUpperCase()}}</h6>
+              </a>
+              <ul class="list-inline overflow-h">
+                <!-- <li class="thumb-product-price line-through">$60.00</li> -->
+                <li class="thumb-product-price">
+                  <!-- {{item.pro_price}} -->
+                  {{item.product_price | currency : 'INR'}}
+                </li>
+              </ul>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--<p-carousel [value]="TopSellingProducts" [numVisible]="4" [numScroll]="1" circular="true" [autoplayInterval]="6000"
+  [responsiveOptions]="responsiveOptions">
+  <p-header>
+    <h3 class="h3 text-center">Top Selling Products</h3>
+    <br>
+  </p-header>
+  <ng-template let-pro pTemplate="item">
+    <div style="margin-left: 2%;">
+      <a>
+        <img src="http://localhost:3000/images/product_images/{{pro.pro_img}}" alt="Product"
+          style="height: 250px;width: 175px;" (click)="ImageViewMore(pro.fk_pro_id)">
+      </a>
+      <div>
+        <h3>
+          <a>{{pro.pro_name | titlecase}}</a>
+        </h3>
+        <div>
+          <div class="shop-red">
+            <span>{{pro.pro_price | currency : 'INR'}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>-->
+
