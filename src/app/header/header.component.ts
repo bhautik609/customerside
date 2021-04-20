@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from '../category.service';
+import { ProductService } from '../product.service';
+import { product } from '../producthome/product';
 import { cat } from './cat';
 
 @Component({
@@ -13,7 +15,8 @@ username:string;
 flage=false;
 flage1=true;
 obj:cat[]=[];
-  constructor(private _router:Router,private _catdat:CategoryService) { }
+category:product[]=[];
+  constructor(private _router:Router,private _catdat:CategoryService,private _product:ProductService) { }
 
   ngOnInit(): void {
     
@@ -38,6 +41,7 @@ obj:cat[]=[];
   this._catdat.getAllcat().subscribe((data:cat[])=>{
     this.obj=data;
     console.log(data);
+    console.log(this.obj);
   });
 
   }
@@ -61,6 +65,24 @@ obj:cat[]=[];
   {
     this.flage1=false;
   }
+
+  }
+  SearchTextBox(txtSearch) {
+    console.log(txtSearch);
+    if (txtSearch != null) {
+      this._router.navigate(['/serchpage', txtSearch]);
+    }
+  }
+  SearchTextBox1(txtSearch) {
+    location.reload();
+    console.log(txtSearch);
+    if (txtSearch != null) {
+      this._router.navigate(['/serchpage', txtSearch]);
+    }
+  }
+  onWatchClick(cat_id){
+    console.log(cat_id);
+    this._router.navigate(['/productdroup', cat_id]);
 
   }
 

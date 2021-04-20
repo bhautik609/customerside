@@ -22,6 +22,13 @@ import{MatSnackBarModule}from '@angular/material/snack-bar';
 import { ShippingComponent } from './shipping/shipping.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { HelpComponent } from './help/help.component';
+import { MyorderComponent } from './myorder/myorder.component';
+import { SerchpageComponent } from './serchpage/serchpage.component';
+import { ProductdisplaybycatComponent } from './productdisplaybycat/productdisplaybycat.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ThankorderngComponent } from './thankorderng/thankorderng.component';
+import { ViewmororderComponent } from './myorder/viewmororder/viewmororder.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +44,13 @@ import { ContactusComponent } from './contactus/contactus.component';
     ShippingComponent,
     PaymentComponent,
     ContactusComponent,
+    HelpComponent,
+    MyorderComponent,
+    SerchpageComponent,
+    ProductdisplaybycatComponent,
+    PagenotfoundComponent,
+    ThankorderngComponent,
+    ViewmororderComponent,
     
     
     

@@ -20,15 +20,10 @@
           src="http://localhost:3000/images/product/{{item.product_img1}}">
       </div>
       <div class="row" *ngFor="let item of obj" style="float: left;margin-top: 7%;width: 100%;">
-  
-  
-        <div class="col-md-6 col-sm-6 col-sm-12">
+       <div class="col-md-6 col-sm-6 col-sm-12">
           <div class="shop-product-heading">
             <h2>{{item.product_name }}</h2>
           </div>
-          
-  
-  
           <p class="mb15"> <label style="font-style: bold;font-size: medium;">Description:</label> <br>{{item.product_desc}}
           </p>
   
@@ -36,18 +31,12 @@
             <li class="shop-red">
               <label style="font-style: bold;font-size: medium;">Price:</label> <br><br>
               {{item.product_price|  currency:'INR' }}</li>
-  
+            
           </ul>
           <ul>
             <label style="font-style: bold;font-size: medium;">Manufacturer:</label> <br>
             <h2>{{item.product_mfd}}</h2>
-          </ul>
-  
-          <br>
-          
-  
-          <br>
-          <br>
+          </ul><br>
           <!-- <h3 class="shop-product-title">Quantity</h3>
           <div class="mb30">
             <form name="f1" class="product-quantity">
@@ -62,10 +51,10 @@
   
           <ul class="list-inline add-to-wishlist add-to-wishlist-brd">
             <li class="wishlist-in">
-              <i class="fa fa-heart"></i>
-  
-              <button style="border: none;background-color: white;color:yellowgreen" (click)="AddTowishlist()">Add to
-                Wishlist</button>
+              <i></i>
+               <p>product garranty:-{{item.product_garr}}</p>
+               <p>product warranty:-{{item.product_warr}}</p>
+              
             </li>
   
           </ul>

@@ -8,7 +8,7 @@ import { Maincart } from './maincart';
 })
 export class CartoperationService {
   url: string = 'http://localhost:3000/order/';
-  urlOrderDetail: string = 'http://localhost:3000/orderdetail/';
+  urlOrderDetail: string = 'http://localhost:3000/insertorder/';
   public gt:number;
   constructor(private _http:HttpClient,) { }
 
@@ -49,9 +49,15 @@ addorder(item){
   let head=new HttpHeaders().set(environment.headname,environment.headvalue);
   return this._http.post(this.url,body,{headers:head});
 }
-addorderdetail(item){
-  let body=JSON.stringify(item);
-  let head=new HttpHeaders().set(environment.headname,environment.headvalue);
-  return this._http.post(this.url,body,{headers:head});
+//addorderdetail(item){
+  //let body=JSON.stringify(item);
+  //let head=new HttpHeaders().set(environment.headname,environment.headvalue);
+  //return this._http.post(this.url,body,{headers:head});
+//}
+addOrderDetail(item) {
+  const body = JSON.stringify(item);
+  const head = new HttpHeaders().set('Content-Type', 'application/json');
+  console.log(body);
+  return this._http.post(this.urlOrderDetail, body, { headers: head });
 }
 }

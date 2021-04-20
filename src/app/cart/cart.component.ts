@@ -98,7 +98,42 @@ export class CartComponent implements OnInit {
     this.GrandTotal = this._cart.onRemoveFromCart(SelectedProductID);
     this.arrcartItems.splice(index, 1);
   }
+  onQtyChange(item: CartDetails, txtQty: string, index: number) {
+    // console.log("selected item ", item);
+    console.log("latest value ", txtQty);
+    // item.SubTotal = +txtQty * item.Product.pro_price;
+    // let x: CartDetails[] = [item];
+    // this.GrandTotal = this._cartService.doGrandTotal(x);
+    console.log(item.Product.product_qty);
 
+    item.Quantuty = +txtQty;
+
+    item.SubTotal = this._cart.doSubTotal(item.Product.product_price, item.Quantuty);
+    this.cart.CartItems[index] = item;
+    this.cart.GrandTotal = this._cart.doGrandTotal(this.cart.CartItems);
+    this.GrandTotal = this.cart.GrandTotal;
+
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+    let abc = parseInt(txtQty);
+    this.ipq = item.Product.product_qty;
+    this.proQty = parseInt(txtQty);
+    if (abc > item.Product.product_qty) {
+
+      //console.log("sorrynot avilable");
+
+      this.flag = true;
+      this.pn = item.Product.product_name;
+      localStorage.setItem('Finalamount', this.GrandTotal + "");
+      console.log(this.GrandTotal);
+
+
+    }
+    localStorage.setItem('Finalamount', this.GrandTotal + "");
+      console.log(this.GrandTotal);
+
+
+  }
+  
   
 
   }

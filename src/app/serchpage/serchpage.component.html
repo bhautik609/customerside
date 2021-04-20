@@ -1,0 +1,47 @@
+<div class="main-contain col-grid-style">
+    <div class="container">
+      <div class="row clearfix">
+  
+        <div *ngFor="let item of searchArray" class="col-md-3 col-sm-6 col-xs-12">
+          <div class="item-box item mb30">
+            <div class="shop-item">
+              <ul class="product-labels">
+                <li>New</li>
+              </ul>
+              <div class="item-img">
+                <img src="http://localhost:3000/images/product/{{item.product_img1}}" alt="" class="img-responsive" id="img200">
+              </div>
+  
+              <div class="item-inner">
+                <div class="item-inner-detail">
+                  <div class="item-inner-detail-cart">
+                    <a class="btn btn-line-xs btn-white-line" (click)="onAddToCart(item)">
+                      <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                    <br><br>
+                    <a class="btn btn-line-xs btn-white-line" (click)="ImageViewMore(item.product_id)">
+                      <i class="fa fa-info-circle"></i> More...</a>
+                  </div>
+                </div>
+              </div>
+              <div class="shop-item-info small-thumb-proudct">
+                <a routerLink="shop-detail.html">
+                  <h6 class="shop-item-name">{{item.product_name.toUpperCase()}}</h6>
+                </a>
+                <ul class="list-inline overflow-h">
+                  <!-- <li class="thumb-product-price line-through">$60.00</li> -->
+                  <li class="thumb-product-price">
+                    <!-- {{item.pro_price}} -->
+                    {{item.product_price | currency : 'INR'}}
+                  </li>
+                </ul>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

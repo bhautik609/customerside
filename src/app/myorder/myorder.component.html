@@ -1,0 +1,92 @@
+<div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h1 class="title"><span>Order List</span></h1>
+          <div class="breadcrumb">
+            <a routerLink="/">Home</a>
+            <span class="delimeter">/</span>
+            <span class="current">Order List</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Breadcrumb -->
+  <!-- <app-leftcategory></app-leftcategory> -->
+  <div class="main-contain" style="margin-left: 10%;">
+    <div class="container">
+      <div class="row">
+        <div class="home-main col-md-9 col-sm-12 clo-xs-12 main-contant-right">
+          <div class="widget">
+            <h6 class="text-uppercase bottom-line" style="width: 100%;"><strong>My Order</strong></h6>
+          </div>
+          <div class="table-responsive" style="width: 100%;">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Order Id</th>
+                  <th>Bill Price</th>
+                  <th>Date</th>
+                  <th>Payment Type</th>
+                  <th>
+                    Details
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+  
+                <tr *ngFor="let item of arrMyOrder">
+                  <td>{{item.order_id}}</td>
+                  <td>{{item.order_amount}}</td>
+                  <td>{{item.order_date}}</td>
+                  <td>{{item.payment_type  | uppercase }}</td>
+                  <td>
+                    <button (click)="OnMyOrderViewMore(item.order_id)" style=" border:none;height: 50px;width: 100px;"
+                      class="btn cd-btn pull-left">
+                      View More
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+  
+          <a href="#" class="btn cd-btn pull-left">
+            <i class="fa fa-arrow-left mr5" routerLink="/"></i> Continue shopping
+          </a>
+        </div>
+        <aside>
+          <p-dialog [(visible)]="Display">
+            <p-header>
+              Order Status
+            </p-header>
+  
+            <label> Bill Id :</label> {{od}}<br>
+            <label>Deliver Boy Email Id : </label>{{delId}}<br>
+            <label>Delivery Date :</label>{{delivery_date}}<br>
+            <label>Bill Date :</label>{{bill_date}}
+            <br><label>Status :</label>{{status}}
+  
+          </p-dialog>
+  
+          <p-dialog [(visible)]="Display2">
+            <p-header>
+              Order Status
+            </p-header>
+  
+            {{processing}}
+          </p-dialog>
+          <p-dialog [(visible)]="warncancel">
+            <p-header>
+              Alert!!!
+            </p-header>
+            Are You Sure You Want Cancel Order?
+            <p-footer>
+              <button type="button" pButton icon="pi pi-check" label="Yes" (click)="confirmOrderCancel(od)">Yes</button>
+              <button type="button" pButton icon="pi pi-times" (click)="warncancel=false" label="No"
+                class="ui-button-secondary">No </button>
+  
+            </p-footer>
+          </p-dialog>
+  
