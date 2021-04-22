@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Maincart } from 'src/app/cart/maincart';
+import { MyorderService } from '../myorder.service';
 import { orders } from '../orders';
 
 @Component({
@@ -37,9 +39,21 @@ export class ViewmororderComponent implements OnInit {
   detail_id: number;
   btnflag: boolean = false;
   orderDetailsarr: orders[];
-  constructor() { }
+  constructor(private act_route:ActivatedRoute,private orderdata:MyorderService) { }
 
   ngOnInit(): void {
+    this.order_id = this.act_route.snapshot.params['order_id'];
+    this.u_EmailId = localStorage.getItem('username');
+    this.orderdata.getUserOrderCheck(this.order_id).subscribe(
+      (dataOrderCheck: any[]) => {
+        console.log(dataOrderCheck);
+        this.orderdata.getMyOrderByIdNotAssign(this.order_id).subscribe(
+          (dataOrderNotAssign: any[]) => {
+            console.log(dataOrderNotAssign);
+            this.OrderNotAssignArr = dataOrderNotAssign;
+          }
+        );
+      });
   }
   confirmOrderCancel(od){}
   OnStatusChack(id:number){}

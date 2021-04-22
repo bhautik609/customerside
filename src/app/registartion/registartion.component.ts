@@ -47,7 +47,7 @@ export class RegistartionComponent implements OnInit {
     console.log(fd);
     this._regdata.adduser(fd).subscribe((data:any)=>{
       console.log(data);
-      if(data.affectedRow==1)
+      if(data.affectedRows==1)
       {
         alert('registartion succesfully');
         this._router.navigate(['/login']);

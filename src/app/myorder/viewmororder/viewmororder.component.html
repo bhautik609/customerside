@@ -27,6 +27,7 @@
                 <tr>
                   <th>Product</th>
                   <th>Name</th>
+                  <th>Date</th>
                   <th>Price</th>
                   <th>Qty</th>
   
@@ -36,18 +37,21 @@
                 <tr *ngFor="let item of OrderNotAssignArr">
                   <td style="width: 400px;">
                     <a style="width: 400px;height: 200px;">
-                      <img src="http://localhost:3000/images/product_images/{{item.pro_img}}"
+                      <img src="http://localhost:3000/images/product/{{item.product_img1}}"
                         style="height:225px;width: 200px;" alt="product" class="img-resopnsive">
                     </a>
                   </td>
                   <td>
-                    <h6 class="regular">{{item.pro_name}}</h6>
+                    <h6 class="regular">{{item.product_name}}</h6>
   
                   </td>
                   <td>
-                    <span>{{item.price}}</span>
+                    <span>{{item.order_date}}</span>
                   </td>
-                  <td style="align-content: center;">{{item.qty}}</td>
+                  <td>
+                    <span>{{item.product_price}}</span>
+                  </td>
+                  <td style="align-content: center;">{{item.order_qty}}</td>
   
                 </tr>
   

@@ -49,6 +49,7 @@ category:product[]=[];
     localStorage.removeItem('username');
     localStorage.removeItem('id');
     localStorage.removeItem('username1');
+    localStorage.removeItem('cart');
     this._router.navigate(['/']);
     if(localStorage.getItem("username")==null)
     {
