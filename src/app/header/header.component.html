@@ -1,9 +1,11 @@
+
 <div style="margin-bottom: 50px;">
     <header>
       <div class="topbar">
         <div class="container">
           <ul class="list-inline pull-left hidden-sm hidden-xs">
             <li><span class="text-primary color">Have a question?</span> Call 910 4610 020</li>
+            
           </ul>
           <ul class="topbarnav pull-right">
             <li class="linkdown">
@@ -85,7 +87,10 @@
               <li class="li-header"><a routerLink="/myorder">Order</a></li>
               <li class="li-header"><a routerLink="/con">ContactUs</a></li>
               <!--<li class="li-header"><a (click)="Checmember()" style="color: red;">Buy Membership</a></li>-->
-              <li class="li-header" style="margin-left: 25%;color: red;"><a routerLink="/Wishes">Send Wishes</a></li>
+              <li *ngIf="flage1"  class="li-header" style="margin-left: 25%;color: red;"><a (click)="onLogout()">Welcome:-{{username1}}</a></li>
+              <!--<li  *ngIf="flage1" class="li-header" style="margin-top: 20%;"><img mat-card-image style="height: 30px;width: 30px;border-radius: 100px;" src="http://localhost:3000/images/user/{{user_img1}}" alt=""
+                id="img200"></li>-->
+               
             </ul>
           </div>
         </div>

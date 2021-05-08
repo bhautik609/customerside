@@ -46,6 +46,7 @@ export class ProducthomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
     this._productdata.getAllproduct().subscribe((data:product[])=>{
       this.obj=data;
       console.log(data);

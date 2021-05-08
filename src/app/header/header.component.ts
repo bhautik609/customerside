@@ -16,11 +16,14 @@ flage=false;
 flage1=true;
 obj:cat[]=[];
 category:product[]=[];
+username1;
+user_img1;
   constructor(private _router:Router,private _catdat:CategoryService,private _product:ProductService) { }
 
   ngOnInit(): void {
-    
-    
+    this.user_img1=localStorage.getItem('user_img1');
+    console.log(this.user_img1);
+    this.username1=localStorage.getItem('username1');
     this.username=localStorage.getItem("username");
     console.log(this.username);
     if(localStorage.getItem("username")==null)
@@ -46,10 +49,14 @@ category:product[]=[];
 
   }
   onLogout(){
+   var r=confirm('Are you sure you want to leave this site');
+    //('Are you sure you want to leave this site');
+    if(r==true){
     localStorage.removeItem('username');
     localStorage.removeItem('id');
     localStorage.removeItem('username1');
     localStorage.removeItem('cart');
+    localStorage.removeItem('user_img1');
     this._router.navigate(['/']);
     if(localStorage.getItem("username")==null)
     {
@@ -66,6 +73,11 @@ category:product[]=[];
   {
     this.flage1=false;
   }
+}
+else
+{
+  
+}
 
   }
   SearchTextBox(txtSearch) {

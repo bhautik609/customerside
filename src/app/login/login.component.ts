@@ -54,7 +54,10 @@ z;
           localStorage.setItem("username",this.obj[0].user_email);
           localStorage.setItem("id",this.obj[0].user_id+'');
           localStorage.setItem('username1',this.obj[0].user_name);
+          localStorage.setItem('user_img1',this.obj[0].user_img);
           this._router.navigate(['/']);
+          
+        
         }
         else{
           alert('username or password incorrect');
@@ -65,6 +68,7 @@ z;
          
       }
     });
+   
   }
   DontAcc(){}
 
