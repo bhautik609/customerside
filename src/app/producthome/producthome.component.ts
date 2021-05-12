@@ -52,6 +52,11 @@ export class ProducthomeComponent implements OnInit {
       console.log(data);
     });
   }
+  display: boolean = false;
+
+  showDialog() {
+      this.display = true;
+  }
   
   onAddToCart(item){
     console.log(item);

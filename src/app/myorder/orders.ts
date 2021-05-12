@@ -1,6 +1,9 @@
 export class orders {
     public constructor(
       public order_id: number,
+      public order_amount:number,
+      public payment_type:string,
+      public order_date:string,
       public bill_date: string,
       public order_amt: number,
       public order_payment: string,

@@ -15,6 +15,8 @@ import{ MatIconModule } from '@angular/material/icon';
 import{MatRadioModule}from '@angular/material/radio';
 import{MatCardModule}from '@angular/material/card';
 import { DialogModule } from 'primeng/dialog';
+import { CarouselModule } from 'primeng/carousel';
+import { GalleriaModule } from 'primeng/galleria';
 import { MyaccountComponent } from './myaccount/myaccount.component';
 import { ViwemorproductComponent } from './viwemorproduct/viwemorproduct.component';
 import { CartComponent } from './cart/cart.component';
@@ -68,6 +70,8 @@ import { ViewmororderComponent } from './myorder/viewmororder/viewmororder.compo
     MatCardModule,
     DialogModule,
     MatSnackBarModule,
+    CarouselModule,
+    GalleriaModule
     
   ],
   

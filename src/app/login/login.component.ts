@@ -39,6 +39,7 @@ z;
     this._user.getUserByEmail(this.z).subscribe((data) => {
       console.log(data[0]?.user_password);
       this._mail.passwordMail(this.z, "Forgotten Password", " Forgot password request maid for your account .Your Password is   " + data[0]?.user_password + "this is Giftvilla service").subscribe((data) => {
+        console.log(data);
         console.log("mail sent");
       });
     });
