@@ -27,7 +27,7 @@ export class RegistartionComponent implements OnInit {
       user_mob:new FormControl(null,Validators.required),
       user_address:new FormControl(null,Validators.required),
       
-       user_type:new FormControl(null),
+       user_type:new FormControl('1'),
       });
   }
   onSignup(){
@@ -61,7 +61,9 @@ export class RegistartionComponent implements OnInit {
     
 
   }
-  onSignupCancel(){}
+  onSignupCancel(){
+    this._router.navigate(['/']);
+  }
   onFileAdd(value){
     this.selectedfile=<File>value.target.files[0];
    }

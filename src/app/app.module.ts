@@ -31,6 +31,7 @@ import { ProductdisplaybycatComponent } from './productdisplaybycat/productdispl
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ThankorderngComponent } from './thankorderng/thankorderng.component';
 import { ViewmororderComponent } from './myorder/viewmororder/viewmororder.component';
+import { GooglePayButtonModule } from "@google-pay/button-angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { ViewmororderComponent } from './myorder/viewmororder/viewmororder.compo
     DialogModule,
     MatSnackBarModule,
     CarouselModule,
-    GalleriaModule
+    GalleriaModule,
+    GooglePayButtonModule
     
   ],
   

@@ -23,6 +23,12 @@
     <button style="height: 50px;width: 77%;font-size: large;" class='btn btn-success' (click)="onCheckOutCash()">
       CASH
     </button>
+    <div class="demo">
+      <google-pay-button  environment="TEST" [buttonColor]="buttonColor" [buttonType]="buttonType"
+        [buttonSizeMode]="isCustomSize ? 'fill' : 'static'" [paymentRequest]="paymentRequest" [style.width.px]="buttonWidth"
+        [style.height.px]="buttonHeight" (loadpaymentdata)="onLoadPaymentData($event)">
+      </google-pay-button>
+    </div>
     <button *ngIf="walltetFlag" style="height: 50px;width: 77%;font-size: large;margin-top: 5%;" class="btn btn-primary"
       (click)="onCheckOutWallet()">
       Wallet
@@ -33,17 +39,17 @@
     </label>
   </div>
   <!-- <div> -->
-  <p-dialog [(visible)]="paymenterr">
+  <!--<p-dialog [(visible)]="paymenterr">
     <p-header>Paymemt Error</p-header>
     Oops!!! Some error occured during payment via paypal please try again or try other mode of payment
   
-  </p-dialog>
+  </p-dialog>-->
   <!-- </div> -->
   <!-- <div> -->
-  <p-dialog [(visible)]="insuff">
+  <!--<p-dialog [(visible)]="insuff">
     <p-header>Insufficent Balance</p-header>
     Oops!!!Sorry you don't have sufficent balance in your wallet. Try other mode of payment
   
-  </p-dialog>
+  </p-dialog>-->
   <!-- </div> -->
   

@@ -56,6 +56,7 @@ z;
           localStorage.setItem("id",this.obj[0].user_id+'');
           localStorage.setItem('username1',this.obj[0].user_name);
           localStorage.setItem('user_img1',this.obj[0].user_img);
+          alert("login successful");
           this._router.navigate(['/']);
           
         
